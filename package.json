@@ -1,0 +1,61 @@
+{
+  "name": "dsh-message-navigator",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness message navigator: a table of contents for long conversations — user-message outline, click-to-jump, scroll-synced highlight, keyword search and Markdown outline export.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "navigator",
+    "conversation",
+    "outline",
+    "chat",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kekcidbbe-sudo/dsh-message-navigator.git"
+  },
+  "homepage": "https://github.com/kekcidbbe-sudo/dsh-message-navigator#readme",
+  "bugs": {
+    "url": "https://github.com/kekcidbbe-sudo/dsh-message-navigator/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "node --check lib/client.js && node --input-type=module -e \"import('./lib/index.js').then(m => { if (m.name !== 'message-navigator') throw new Error('unexpected host half name') })\""
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  }
+}

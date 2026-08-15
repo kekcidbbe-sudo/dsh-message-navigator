@@ -1,0 +1,5 @@
+# dsh-message-navigator bundle patch：向组合插入消息导航器插件行。
+# 行 id 与宿主半边导出的 cordis `name` 一致；包名从 profile 的 node_modules 解析。
+- insert:
+    - id: message-navigator
+      name: 'dsh-message-navigator'
