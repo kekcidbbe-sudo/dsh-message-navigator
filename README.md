@@ -6,6 +6,7 @@ to jump straight to it, keep the highlight in sync while you scroll, search,
 and export the whole outline as Markdown.
 
 [![npm](https://img.shields.io/npm/v/dsh-message-navigator)](https://www.npmjs.com/package/dsh-message-navigator)
+[![CI](https://github.com/kekcidbbe-sudo/dsh-message-navigator/actions/workflows/ci.yml/badge.svg)](https://github.com/kekcidbbe-sudo/dsh-message-navigator/actions/workflows/ci.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [English](README.md) | [中文](README.zh.md)
@@ -102,6 +103,7 @@ dsh-message-navigator/
 ├── lib/
 │   ├── index.js          # host half (minimal placeholder)
 │   └── client.js         # browser half (the whole feature)
+├── .github/workflows/ci.yml
 ├── CHANGELOG.md
 ├── LICENSE
 ├── README.md
