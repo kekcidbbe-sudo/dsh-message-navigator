@@ -24,6 +24,9 @@ and export the whole outline as Markdown.
   center.
 - **Live updates**: new messages join the outline through snapshot
   subscription — no polling, no MutationObserver.
+- **Full history**: the complete outline includes messages outside the render
+  window (host endpoint); clicking a 历史 item auto-loads older pages until
+  the target is in the window, then jumps.
 - **Keyword search** with instant filtering.
 - **Keyboard navigation**: ↑/↓ select, Enter jump, Esc collapse.
 - **Panel customization**: drag the header to move the panel, drag the left
@@ -123,9 +126,8 @@ dsh-message-navigator/
 
 ## Known limitations
 
-- Only messages in the currently rendered window are listed (DSH loads
-  history in windows; scroll up to load older messages first — the panel
-  footer hints at this).
+- Jumping to a message far outside the render window loads history page by
+  page (automatic; a very old target takes a moment).
 - While the model is streaming, the conversation may pull you back to the
   bottom after a jump; jumping is stable once the turn settles.
 

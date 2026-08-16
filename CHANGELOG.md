@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-08-16
+
+### Added
+
+- **Full-history outline**: the host half now exposes a loopback endpoint
+  (`/plugins/dsh-message-navigator/messages`) that returns every user
+  message of a session, including ones outside the render window. The panel
+  shows the complete outline — like the navigators in Hermes/Codex.
+- **Auto-load on jump**: clicking an item whose message is outside the render
+  window drives `conversation.loadOlder()` page by page until the target
+  enters the window, then scrolls to it — no manual "加载更早" clicks.
+- Outside-window items are marked with a 历史 tag; the footer shows
+  共 N 条 · 已加载 M 条. If the host half is not loaded (old process), the
+  client degrades gracefully to the window-only mode.
+
 ## [1.1.1] - 2025-08-16
 
 ### Fixed
