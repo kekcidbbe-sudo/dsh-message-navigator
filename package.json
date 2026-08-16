@@ -1,6 +1,6 @@
 {
   "name": "dsh-message-navigator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DeepSeek Harness message navigator: a table of contents for long conversations — user-message outline, click-to-jump, scroll-synced highlight, keyword search and Markdown outline export.",
   "type": "module",
   "main": "lib/index.js",

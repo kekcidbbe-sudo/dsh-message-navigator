@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2025-08-16
+
+### Fixed
+
+- **Z-index conflict with floating sidebars**: the navigator toggle button,
+  floating pill and panel were layered below the fixed toggle cluster /
+  side panel of `dsh-better-sidebar` (z-index 50–60). All navigator surfaces
+  now layer at z-index 70, so the button stays clickable and the panel stays
+  on top when the side card opens.
+
 ## [1.0.0] - 2025-08-16
 
 ### Added
