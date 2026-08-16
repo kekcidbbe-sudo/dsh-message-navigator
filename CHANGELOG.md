@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2025-08-16
+
+### Fixed
+
+- **Handle follows the conversation edge**: the edge handle and panel are now
+  anchored to the conversation content area's right edge instead of the
+  viewport. When a right sidebar (e.g. `dsh-better-sidebar`) opens and
+  squeezes the conversation, the handle moves with it and stays visible at
+  the conversation's right edge, never covered by the sidebar panel.
+
 ## [1.1.0] - 2025-08-16
 
 ### Changed
