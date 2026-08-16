@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2025-08-16
+
+### Changed
+
+- **Edge-handle + fold-out panel**: the navigator no longer occupies a fixed
+  floating card beside the right sidebar. It now collapses into a slim
+  right-edge handle (📋 + message count, no layout footprint) and expands
+  into an overlay panel that floats **above** any right sidebar
+  (z-index 200) without pushing or being covered by it.
+- Clicking an outline item now auto-collapses the panel after the jump,
+  keeping the workspace clean.
+- Drag-to-move and width-resize were removed: the handle stays docked to the
+  right edge and the panel has a fixed comfortable width.
+
 ## [1.0.1] - 2025-08-16
 
 ### Fixed
