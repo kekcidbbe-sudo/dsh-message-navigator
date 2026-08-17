@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Navigator Browser Fixture</title>
+  <style>
+    :root {
+      --dsw-alias-bg-base: #f7f7f7;
+      --dsw-alias-bg-overlay: #fff;
+      --dsw-alias-label-primary: #202124;
+      --dsw-alias-label-secondary: #74777c;
+      --dsw-alias-border-l1: rgba(32, 33, 36, .16);
+      --dsw-alias-brand-primary: #4d6bfe;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; overflow: hidden; background: var(--dsw-alias-bg-base); font-family: system-ui, sans-serif; }
+    #frame { position: relative; display: grid; grid-template-columns: 240px minmax(0, 1fr); width: 100vw; height: 100vh; }
+    #sidebar { border-right: 1px solid #e3e3e3; background: #f0f0f0; }
+    [data-conversation-scroll] { position: relative; overflow-y: auto; height: 100vh; padding: 64px 120px 120px; }
+    [data-chat-flow] { display: flex; flex-direction: column; gap: 44px; max-width: 760px; margin: 0 auto; }
+    [data-chat-anchor-key] { min-height: 120px; padding: 24px; border-radius: 18px; background: #fff; color: #202124; line-height: 1.6; }
+    [data-chat-flow-kind="user"] { margin-left: 18%; background: #eceff3; }
+    [data-chat-flow-kind="tool"] { min-height: 68px; color: #62666c; font-family: ui-monospace, monospace; }
+    [data-composer-seat] { position: sticky; bottom: 20px; height: 80px; margin-top: 60px; border: 1px solid #ddd; border-radius: 22px; background: #fff; }
+    [data-shell-overlay] { position: absolute; inset: 0; z-index: 20; pointer-events: none; }
+    [data-shell-overlay] > * { pointer-events: auto; }
+  </style>
+</head>
+<body>
+  <div id="frame">
+    <aside id="sidebar"></aside>
+    <main data-conversation-scroll>
+      <div data-chat-flow id="chat-flow"></div>
+      <div data-composer-seat></div>
+    </main>
+    <div data-shell-overlay id="plugin-root"></div>
+  </div>
+  <script>
+    const flow = document.getElementById('chat-flow')
+    const kinds = ['user', 'assistant', 'assistant', 'tool']
+    for (let index = 0; index < 40; index += 1) {
+      const row = document.createElement('article')
+      const kind = kinds[index % kinds.length]
+      row.dataset.chatAnchorKey = `fixture-${index + 1}`
+      row.dataset.chatFlowKey = `fixture-${index + 1}`
+      row.dataset.chatFlowKind = kind
+      row.textContent = kind === 'user'
+        ? `第 ${index + 1} 条用户消息：请检查这个导航器在长会话中的滚动和预览行为。`
+        : kind === 'tool'
+          ? `tool_${index + 1}: fixture result completed`
+          : `第 ${index + 1} 条 DeepSeek 回复。这里是用于验证预览卡片、位置映射和键盘导航的测试内容。`
+      flow.appendChild(row)
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# build / package artifacts
+*.tgz
+dist/
+
+# screenshots (keep only the README demo image)
+*.png
+!dsh-message-navigator.png
+
+# misc
+.DS_Store
+*.log

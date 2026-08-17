@@ -1,0 +1,4 @@
+# Adds the host/client pair to the active DeepSeek Harness profile.
+- insert:
+    - id: message-navigator
+      name: dsh-message-navigator
