@@ -4,7 +4,7 @@
 
 ## 效果预览
 
-![dsh-message-navigator](https://cdn.jsdelivr.net/gh/kekcidbbe-sudo/dsh-message-navigator@main/dsh-message-navigator.png)
+![dsh-message-navigator](https://cdn.jsdelivr.net/gh/miaomiao636/dsh-message-navigator@main/dsh-message-navigator.png)
 
 *装上插件后的样子：对话左侧出现 Codex 式的消息导航器，悬停或点击即可浏览并跳转到任意一条用户消息。*
 
